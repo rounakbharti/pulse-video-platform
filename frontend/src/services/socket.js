@@ -7,7 +7,13 @@ let socket = null;
 export const connectSocket = (tenantId) => {
   if (socket) return socket;
 
-  socket = io('/', {
+  // Extract the base host (e.g., https://pulse-api-xyz.onrender.com) by stripping /api 
+  // or default to '/' if using Vite proxy locally.
+  const socketUrl = import.meta.env.VITE_API_URL 
+    ? import.meta.env.VITE_API_URL.replace('/api', '') 
+    : '/';
+
+  socket = io(socketUrl, {
     path: '/socket.io',
     transports: ['websocket'],
     autoConnect: true,
