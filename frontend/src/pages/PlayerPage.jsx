@@ -23,7 +23,8 @@ export const PlayerPage = () => {
         const res = await api.get(`/videos/${id}`);
         setVideo(res.data.video);
         const token = localStorage.getItem('pulse_token');
-        setStreamUrl(`http://localhost:5000/api/videos/${id}/stream?token=${token}`);
+        const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+        setStreamUrl(`${baseUrl}/videos/${id}/stream?token=${token}`);
       } catch (err) {
         setError('Video not found or you do not have permission to view it.');
       } finally {
