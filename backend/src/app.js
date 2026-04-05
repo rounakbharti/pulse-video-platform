@@ -22,7 +22,10 @@ const createApp = () => {
   // ── Core middleware ──────────────────────────────────────────────────────────
   app.use(
     cors({
-      origin: corsConfig.frontendUrl,
+      origin: function (origin, callback) {
+        // Accept any origin dynamically to support Vercel deployments seamlessly
+        callback(null, true);
+      },
       credentials: true,
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
       allowedHeaders: ['Content-Type', 'Authorization'],

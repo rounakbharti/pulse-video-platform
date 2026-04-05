@@ -20,7 +20,7 @@ const bootstrap = async () => {
   const httpServer = http.createServer(app);
   const io = new SocketServer(httpServer, {
     cors: {
-      origin: corsConfig.frontendUrl,
+      origin: true, // Dynamically accept the incoming origin
       methods: ['GET', 'POST'],
       credentials: true,
     },
