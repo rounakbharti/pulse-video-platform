@@ -4,6 +4,9 @@
 
 > **A comprehensive micro-architectured platform built to securely process multi-tenant video uploads, administer algorithmic sensitivity analysis natively through decoupled job workers, and pipe real-time streaming telemetry across isolated WebSockets.**
 
+---
+
+# Demo Video
 [![Demo Video](https://img.shields.io/badge/Watch_Demo_Video-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://drive.google.com/file/d/12meZyYxUuVBv2Ng00sjj7V5gOGFv7Mnm/view?usp=sharing)
 
 *This application was architected symmetrically emphasizing strict Role-Based Access Controls (RBAC), multi-tenant data boundaries, and deeply unified state observability.*
